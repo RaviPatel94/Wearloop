@@ -1,0 +1,153 @@
+*{
+    font-family: "Karla", sans-serif;
+    margin: 0;
+}
+
+::-webkit-scrollbar {
+    display: none;
+    -ms-overflow-style: none; 
+    scrollbar-width: none;
+}
+
+nav{
+    display: flex;
+    justify-content: space-between;
+    height: 50px;
+    align-items: center;
+    position: fixed;
+    width: 100%;
+    background-color: white;
+    z-index: 90;
+}
+
+nav ul{
+    display: flex;
+    list-style: none;
+    gap: 16px;
+    margin: 0;
+    padding-right: 25px;
+    font-size: 18px;
+}
+
+nav ul li{
+    padding-bottom: 9px;
+    cursor: pointer;
+}
+
+nav input{
+    width: 300px;
+    height: 26px;
+    border: 1px solid;
+    border-radius: 7px;
+}
+
+nav a{
+    text-decoration: none;
+    color: black;
+}
+
+.logo{
+    font-size: 24px;
+}
+
+main{
+    padding-top: 55px;
+}
+
+
+.banner{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.banner img{
+    width: 300px;
+    height: 140px;
+}
+/* menu */
+
+.menu{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    width: 90%;
+    margin: 30px auto;
+    row-gap: 10px;
+    column-gap: 15px;
+    position: relative;
+}
+.itemdispay{
+    background-color: rgb(239, 239, 239);
+    width: 165px;
+    cursor: pointer;
+    margin: auto;
+}
+
+.itemthumbnail{
+    height: 240px;
+    width:165px ;
+    object-fit:fill;
+    overflow: hidden;
+}
+
+.itemtitle{
+    font-size: 16px;
+    font-weight: 500;
+    padding-left: 4px;}
+
+.revcost{
+    font-size: 12px;
+    font-weight: 500;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 4px;
+    align-items: baseline;
+    padding-bottom: 3px;
+}
+
+.revcost button{
+    border: none;
+    cursor: pointer;
+}
+
+.revcost button:hover{
+    padding: 1px 2px;
+    background-color: rgb(90, 90, 90);
+    color: white;
+    border-radius: 2px;
+}
+
+
+@media screen and (max-width: 1160px) {
+    .menu{
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    }
+}
+
+@media screen and (max-width: 970px) {
+    .menu{
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+}
+
+@media screen and (max-width: 780px) {
+    .menu{
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+}
+
+@media screen and (max-width: 580px) {
+    .search{
+        display: none;
+    }
+    .menu{
+        grid-template-columns: 1fr 1fr;
+    }
+    .itemthumbnail{
+        height: 200px;
+        width:145px ;
+    }
+    .itemdispay{
+        width:145px ;
+    }
+}
