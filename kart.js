@@ -1,15 +1,11 @@
-// Fetch items.json data
 tp=document.getElementById("totalprice")
 async function loadCartItems() {
     try {
-        // Fetch the items.json file
         const response = await fetch('./items.json');
         const items = await response.json();
 
-        // Retrieve the cart items from localStorage
         const kartlist = JSON.parse(localStorage.getItem('kart')) || [];
 
-        // Select the div where cart items will be displayed
         const cartItemsDiv = document.getElementById('cartItems');
 
         if (kartlist.length === 0) {
@@ -19,10 +15,7 @@ async function loadCartItems() {
         let totalPrice = 0;
 
         kartlist.forEach(cartItemId => {
-            // Find the matching item in the items.json based on the id
             const item = items.find(i => i.id == cartItemId);
-
-            // If item found, create HTML for the item and display it
             if (item) {
                 const cartItemHTML = `
                     <div class="cart-item">
@@ -45,19 +38,11 @@ async function loadCartItems() {
     }
 }
 
-// Function to remove item from cart
 function removeFromCart(itemId) {
     let kartlist = JSON.parse(localStorage.getItem('kart')) || [];
-
-    // Remove the item from the kartlist
     kartlist = kartlist.filter(id => id != itemId);
-
-    // Update localStorage
     localStorage.setItem('kart', JSON.stringify(kartlist));
-
-    // Reload the page to reflect the changes
     location.reload();
 }
 
-// Load cart items on page load
 window.onload = loadCartItems;
